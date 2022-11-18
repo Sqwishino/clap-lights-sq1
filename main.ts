@@ -1,7 +1,7 @@
 let LightsOn = false
 let Temp = 0
 bluetooth.onBluetoothConnected(function () {
-	
+    basic.showString("connected")
 })
 input.onSound(DetectedSound.Loud, function () {
     LightsOn = !(LightsOn)
@@ -19,6 +19,7 @@ input.onSound(DetectedSound.Loud, function () {
         Temp = input.temperature()
         if (Temp >= 33) {
             music.playSoundEffect(music.builtinSoundEffect(soundExpression.hello), SoundExpressionPlayMode.UntilDone)
+            music.playMelody("D E G - F G B A ", 120)
         }
     }
 })
